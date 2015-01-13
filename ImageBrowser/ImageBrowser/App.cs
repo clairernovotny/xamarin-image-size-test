@@ -21,7 +21,7 @@ namespace ImageBrowser
             Resources.Add("StringToUriConverter", new StringToUriConverter());
 
             // This is the default behavior in Xamarin Forms
-            //MainPage = new ImageList() { BindingContext = viewModel };
+           // MainPage = new ImageList() { BindingContext = viewModel };
             
             
             // This uses the optimized WP8 renderer

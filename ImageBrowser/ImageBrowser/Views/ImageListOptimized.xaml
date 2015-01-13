@@ -5,7 +5,7 @@
              xmlns:imageBrowser="clr-namespace:ImageBrowser;assembly=ImageBrowser"
              x:Class="ImageBrowser.Views.ImageListOptimized">
   
-	<ListView ItemsSource="{Binding Items}">
+	<ListView ItemsSource="{Binding Items}" RowHeight="500">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>

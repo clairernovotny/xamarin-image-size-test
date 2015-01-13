@@ -91,7 +91,7 @@ namespace ImageBrowser.Data
 
                     viewItems.AddRangeUnique(freshData.Items);
                     
-                    await AppCache.AddItemsAsync(CacheKey, freshData);
+                  //  await AppCache.AddItemsAsync(CacheKey, freshData);
                 }
             }
             return timeStamp;

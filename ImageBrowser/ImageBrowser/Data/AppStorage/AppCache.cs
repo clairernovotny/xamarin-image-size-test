@@ -31,31 +31,31 @@ namespace ImageBrowser.Data
             }
         }
 
-        public static async Task<DataSourceContent<T>> GetItemsAsync<T>(string key) where T : BindableSchemaBase
+        public static Task<DataSourceContent<T>> GetItemsAsync<T>(string key) where T : BindableSchemaBase
         {
-            string json = null;
-            if (MemoryCache.ContainsKey(key))
-            {
-                json = MemoryCache[key];
-            }
-            else
-            {
-                json = await UserStorage.ReadTextFromFile(key);
-                MemoryCache[key] = json;
-            }
-            if (!String.IsNullOrEmpty(json))
-            {
-                try
-                {
-                    var records = JsonConvert.DeserializeObject<DataSourceContent<T>>(json);
-                    return records;
-                }
-                catch (Exception ex)
-                {
-                    AppLogs.WriteError("AppCache.GetItems", ex);
-                }
-            }
-            return null;
+        //    string json = null;
+        //    if (MemoryCache.ContainsKey(key))
+        //    {
+        //        json = MemoryCache[key];
+        //    }
+        //    else
+        //    {
+        //        json = await UserStorage.ReadTextFromFile(key);
+        //        MemoryCache[key] = json;
+        //    }
+        //    if (!String.IsNullOrEmpty(json))
+        //    {
+        //        try
+        //        {
+        //            var records = JsonConvert.DeserializeObject<DataSourceContent<T>>(json);
+        //            return records;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            AppLogs.WriteError("AppCache.GetItems", ex);
+        //        }
+        //    }
+            return Task.FromResult<DataSourceContent<T>>(null);
         }
     }
 }
