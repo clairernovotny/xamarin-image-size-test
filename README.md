@@ -1,5 +1,7 @@
 # xamarin-image-size-test
 Repro for Images throwing OOM on Xamarin Forms
+ - Track's Xamarin Forms bug [25780](https://bugzilla.xamarin.com/show_bug.cgi?id=25780)
+
 
 # Getting Started
 1. Open the App.cs in the `ImageBrowser` project and uncomment one of the `MainPage =` statements.
