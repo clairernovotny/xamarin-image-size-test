@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:ImageBrowser.Converters;assembly=ImageBrowser"
+             xmlns:imageBrowser="clr-namespace:ImageBrowser;assembly=ImageBrowser"
+             x:Class="ImageBrowser.Views.ImageListOptimized">
+  
+	<ListView ItemsSource="{Binding Items}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="500" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="{Binding Title}" />
+            <imageBrowser:WImage Grid.Row="1" HeightRequest="500" Aspect="AspectFit" >
+              <imageBrowser:WImage.Source>
+                <UriImageSource Uri="{Binding ImageUrl, Converter={StaticResource StringToUriConverter}}" />
+              </imageBrowser:WImage.Source>
+            </imageBrowser:WImage>
+          </Grid>
+        </ViewCell>  
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>
